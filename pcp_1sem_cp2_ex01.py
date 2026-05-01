@@ -32,7 +32,7 @@ def obter_taxa_imposto(estado):
     elif estado == 4:
         return 0.05
 
-    else:
+    elif estado == 5:
         return 0.0
 
 
