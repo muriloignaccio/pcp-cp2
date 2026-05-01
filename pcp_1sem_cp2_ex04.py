@@ -36,16 +36,16 @@ def main():
     cargo = int(input("Cargo (1-4): "))
 
 
-if cargo == 1:
-    nome_cargo = "Gerente"
-elif cargo == 2:
-    nome_cargo = "Analista"
-elif cargo == 3:
-    nome_cargo = "Assistente"
-elif cargo == 4:
-    nome_cargo = "Estagiário"
-else:
-    nome_cargo = "Desconhecido"
+    if cargo == 1:
+        nome_cargo = "Gerente"
+    elif cargo == 2:
+     nome_cargo = "Analista"
+    elif cargo == 3:
+        nome_cargo = "Assistente"
+    elif cargo == 4:
+        nome_cargo = "Estagiário"
+    else:
+        nome_cargo = "Desconhecido"
 
 
     salario_base = float(input("Salário base (R$): "))
