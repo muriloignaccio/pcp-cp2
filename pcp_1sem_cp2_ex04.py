@@ -35,8 +35,18 @@ def main():
     print("  4 - Estagiário")
     cargo = int(input("Cargo (1-4): "))
 
-    cargos = {1: "Gerente", 2: "Analista", 3: "Assistente", 4: "Estagiário"}
-    nome_cargo = cargos.get(cargo, "Desconhecido")
+
+if cargo == 1:
+    nome_cargo = "Gerente"
+elif cargo == 2:
+    nome_cargo = "Analista"
+elif cargo == 3:
+    nome_cargo = "Assistente"
+elif cargo == 4:
+    nome_cargo = "Estagiário"
+else:
+    nome_cargo = "Desconhecido"
+
 
     salario_base = float(input("Salário base (R$): "))
     horas_extras = float(input("Total de horas extras trabalhadas: "))
