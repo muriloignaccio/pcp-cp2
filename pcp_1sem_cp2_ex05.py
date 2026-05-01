@@ -1,3 +1,5 @@
+# Exercício 05 - Sistema de Financiamento Bancário
+
 def pode_aprovar(idade, renda, valor):
     return idade > 18 and valor <= (renda * 20)
 
@@ -33,21 +35,23 @@ renda_mensal = float(input("Digite sua renda mensal: "))
 valor_emprestimo = float(input("Digite o valor desejado para o empréstimo: "))
 numero_parcelas = int(input("Digite o número de parcelas (3 até 24): "))
 
-if pode_aprovar(idade, renda_mensal, valor_emprestimo):
-    taxa = definir_taxa(numero_parcelas)
+taxa = definir_taxa(numero_parcelas)
 
-    if taxa is None:
-        print("Número de parcelas inválido.")
-    else:
-        parcela = calcular_parcela(valor_emprestimo, taxa, numero_parcelas)
-        total = calcular_total(parcela, numero_parcelas)
-        juros = calcular_juros(total, valor_emprestimo)
+print("\n=== RESULTADO DO FINANCIAMENTO ===")
 
-        print(f"\nCliente: {nome_cliente}")
-        print(f"Valor financiado: R$ {valor_emprestimo:.2f}")
-        print(f"Taxa de juros: {taxa * 100:.0f}% ao mês")
-        print(f"Valor da parcela: R$ {parcela:.2f}")
-        print(f"Total pago: R$ {total:.2f}")
-        print(f"Total de juros: R$ {juros:.2f}")
+if taxa is None:
+    print("Número de parcelas inválido.")
+elif pode_aprovar(idade, renda_mensal, valor_emprestimo):
+    print("Empréstimo aprovado.")
+    parcela = calcular_parcela(valor_emprestimo, taxa, numero_parcelas)
+    total = calcular_total(parcela, numero_parcelas)
+    juros = calcular_juros(total, valor_emprestimo)
+
+    print(f"\nCliente: {nome_cliente}")
+    print(f"Valor financiado: R$ {valor_emprestimo:.2f}")
+    print(f"Taxa de juros: {taxa * 100:.0f}% ao mês")
+    print(f"Valor da parcela: R$ {parcela:.2f}")
+    print(f"Total pago: R$ {total:.2f}")
+    print(f"Total de juros: R$ {juros:.2f}")
 else:
     print("Empréstimo não aprovado.")
