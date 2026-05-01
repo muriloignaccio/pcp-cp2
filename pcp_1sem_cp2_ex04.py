@@ -10,8 +10,16 @@ def calcular_descontos_faltas(salario_base, faltas):
 def calcular_bonus(cargo, recebeu_bonus):
     if not recebeu_bonus:
         return 0
-    bonus = {1: 1000, 2: 500, 3: 300, 4: 100}
-    return bonus.get(cargo, 0)
+    if cargo == 1:
+        return 1000
+    elif cargo == 2:
+        return 500
+    elif cargo == 3:
+        return 300
+    elif cargo == 4:
+        return 100
+    else:
+        return 0
 
 def main():
     print("=" * 40)
