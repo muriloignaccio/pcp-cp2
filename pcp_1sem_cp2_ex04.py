@@ -1,9 +1,7 @@
 # Exercício 04 - Sistema de RH: Cálculo de Salário Final
 
 def calcular_horas_extras(salario_base, horas):
-    valor_hora = salario_base / 220  # jornada mensal padrão
-    valor_hora_extra = valor_hora * 1.5
-    return valor_hora_extra * horas
+    return salario_base * 0.015 * horas
 
 def calcular_descontos_faltas(salario_base, faltas):
     desconto_por_falta = salario_base * 0.02
