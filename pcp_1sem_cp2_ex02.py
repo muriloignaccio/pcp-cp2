@@ -3,22 +3,26 @@ b = float(input("Insira o valor do segundo lado do Triângulo: "))
 c = float(input("Insira o valor do terceiro lado do Triângulo: "))
 triangulo = [a, b, c]
 
-triangulo.sort(reverse=True)
-A, B, C = triangulo
+if b > a:
+    a, b = b, a
+if c > a:
+    a, c = c, a
+if c > b:
+    b, c = c, b
 
 print("\n")
-if A >= B+C:
-    print(f"Não forma um Triângulo: A = {A}, B = {B}, C = {C}")
-elif A == B and B == C:
-    print(f"Triângulo Equilatero: A = {A}, B = {B}, C = {C}")
-elif A == B and B != C or A == C and C != B:
-    print(f"Triângulo Isóceles: A = {A}, B = {B}, C = {C}")
-elif A**2 == B**2 + C**2:
-    print(f"Triângulo Retângulo: A² = {A**2}, B² = {B**2}, C² = {C**2}")
-elif A**2 > B**2 + C**2:
-    print(f"Triângulo Obstusangulo: A² = {A**2}, B² = {B**2}, C² = {C**2}")
-elif A**2 < B**2 + C**2:
-    print(f"TriÂngulo Acutangulo: A² = {A**2}, B² = {B**2}, C² = {C**2}")
-
+if a >= b+c:
+    print(f"NAO FORMA TRIANGULO: A = {a}, B = {b}, C = {c}")
+elif a**2 == b**2 + c**2:
+    print(f"TRIANGULO RETANGULO: A² = {a**2}, B² = {b**2}, C² = {c**2}")
+elif a**2 > b**2 + c**2:
+    print(f"TRIANGULO OBTUSANGULO: A² = {a**2}, B² = {b**2}, C² = {c**2}")
+elif a**2 < b**2 + c**2:
+    if a == b and b == c:
+        print(f"TRIANGULO EQUILATERO: A = {a}, B = {b}, C = {c}")
+    elif a == b and b != c or a == c and c != b:
+        print(f"TRIANGULO ISOSCELES: A = {a}, B = {b}, C = {c}")
+    else:
+        print(f"TRIANGULO ACUTANGULO: A² = {a**2}, B² = {b**2}, C² = {c**2}")
 else:
     print("Algo deu Errado!")
