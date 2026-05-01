@@ -1,10 +1,11 @@
+# Exercício 03 - Cálculo de Média do Semestre
+
 cp1 = float(input("Nota do Checkpoint 1: "))
 cp2 = float(input("Nota do Checkpoint 2: "))
 cp3 = float(input("Nota do Checkpoint 3: "))
 sp1 = float(input("Nota da Sprint 1: "))
 sp2 = float(input("Nota da Sprint 2: "))
 gs  = float(input("Nota da Global Solution: "))
-
 
 menor = cp1
 qual_menor = "CP1"
